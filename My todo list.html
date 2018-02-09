@@ -1,10 +1,9 @@
 <html>
-<h1>My to-do List</h1>
-<input type="text" id="tasks" placeholder="Enter your task here">
-<button onclick = "Todo_list()" type="button" >Add Task</button>
-<ul id = "unorderlist">
-</ul>
-<script>
+    <h1>My to-do List</h1>
+    <input type="text" id="tasks" placeholder="Enter your task here">
+    <button onclick = "Todo_list()" type="button" >Add Task</button>
+    <ul id = "unorderlist"></ul>
+    <script>
     function Todo_list(){
         var li = document.createElement("li");
         var task = document.getElementById("tasks").value;
@@ -13,11 +12,11 @@
         document.getElementById("unorderlist").appendChild(li);
 
     }
-var list = document.querySelector("ul");
-list.addEventListener('click', function (ev) {
-    if (ev.target.tagName ==='LI'){
-        list.removeChild(ev.target);
-    }
-}, false);
-</script>
+    var list = document.querySelector("ul");
+    list.addEventListener('click', function (ev) {
+        if (ev.target.tagName ==='LI'){
+            list.removeChild(ev.target);
+        }
+    }, false);
+    </script>
 </html>
