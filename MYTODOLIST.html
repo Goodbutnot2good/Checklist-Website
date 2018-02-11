@@ -1,0 +1,36 @@
+<html>
+    <head>
+     <link href="https://fonts.googleapis.com/css?family=Concert+One|Monoton" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="todolistCSS.css">
+    </head>
+    <body>
+    <div class = "mainBody">
+        <h1>My to-do List</h1>
+        <input type="text" id="tasks" placeholder="Daily task list...">
+        <button onclick = "Todo_list()" type="button" id="push">Add Task</button>
+    </div>
+    <ul id = "unorderlist"></ul>
+    <script>
+    function Todo_list(){
+        var li = document.createElement("li");
+        var task = document.getElementById("tasks").value;
+        var text = document.createTextNode(task);
+        li.appendChild(text);
+        document.getElementById("unorderlist").appendChild(li);
+       document.getElementById("tasks").value = "";
+    }
+    var input = document.getElementById("tasks");
+    input.addEventListener("keyup",function(event){
+        if (event.keyCode == 13){
+            document.getElementById("push").click();
+            }
+            });
+    var list = document.querySelector("ul");
+    list.addEventListener('click', function (ev) {
+        if (ev.target.tagName ==='LI'){
+            list.removeChild(ev.target);
+        }
+    }, false);
+    </script>
+    </body>
+</html>
