@@ -33,6 +33,7 @@
          $("form").on("submit",function(event)
          {
             alert("stuff");
+              <!--this line of code above is unnecessary I was using this to test if the code gets to this step successfully-->
             $.ajax({
                 data: {thingstodo: $("#tasks").val(),},
                 type: "POST",
