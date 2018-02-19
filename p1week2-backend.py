@@ -5,7 +5,7 @@ app = Flask(__name__)
 # app.secret_key = "jfidibfjnjzjkwf3iu99r9dhvjer0"
 #I assigned data to an empty list and then I will let session equal to data therefore data won't be 
 # empty therefore no error
-data = ["stuff", "hi"]
+data = []
 
 @app.route('/')
 def index():
@@ -32,7 +32,8 @@ def add():
 
 @app.route('/todo/read')
 def fetch():
-    # this line of code suggest that when the user first open the page, it will automatically shown an error b/c session[data] DNE
+    # these two lines of code below suggest that when the user first open the page,
+    #it will automatically shown an error b/c session[data] DNE
 
     #if 'data' not in session:
      #   return jsonify({ "error": "session data was not initialized"})
