@@ -10,24 +10,44 @@ conn = pymysql.connect(host='localhost',
                                        cursorclass=pymysql.cursors.DictCursor)
 @app.route('/')
 def showWebpage():
+    with conn.cursor() as cursor:
+        tables = cursor.execute("SHOW TABLES")
+        data = cursor.fetchall()
+        for tables in data:
+            if table['Tables_in_db'] == 'week3'
+
+        for week3 in data:
+            response[week3['id']] = week3['items']
+
+        json_data = jsonify(dictionary)
+            return json_data
     return render_template('index.html')
 #I couldn't connect to the database, so I drew out a basic skeleton
 #Because of that I couldn't check if there were any errors, but the concept should be right, hopefully
 #so this week's goal is to basically replace sessions with database
 @app.route('/todo/create', methods=['POST'])
 def add():
-    with conn.cursor() as cursor:
+    if request.method == 'POST':
         task = request.json
-        insert = "INSERT INTO week3(item) VALUES(%s)"
-        cursor.execute(insert, str(task))
+        with conn.cursor() as cursor:
+            cursor.execute("INSERT INTO week3(item) VALUES(task)")
+        return 'Success'
+    else:
+        return 'failed'
 
 @app.route('/todo/read', methods=['GET'])
 def fetch():
-    with conn.cursor() as cursor:
-        cursor.execute("SELECT item FROM week3") #selects all the stuff under items;
-        result = cursor.fetchone()
-        return result
-
+    dictionary = {}
+    if request.method == 'GET':
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT item FROM week3") #selects all the stuff under items;
+            result = cursor.fetchall()
+            for stuff in result:
+                response[stuff['id']] = stuff['item']
+            json_result = jsonify(dictionary)
+            return json_result
+    else:
+        return 'failed'
 @app.route('/todo/update', methods=['PUT'])
 def update():
     index = request.get_json()['index']
