@@ -3,11 +3,11 @@ import pymysql.cursors
 
 app = Flask(__name__) #create flask object
 conn = pymysql.connect(host='localhost',
-                                       database='TODO',
-                                       user='cs1122',
-                                       password='cs122',
-                                       charset='utf8mb4',
-                                       cursorclass=pymysql.cursors.DictCursor)
+                       database='TODO',
+                       user='cs1122',
+                       password='cs122',
+                       charset='utf8mb4',
+                       cursorclass=pymysql.cursors.DictCursor)
 @app.route('/')
 def showWebpage():
     with conn.cursor() as cursor:
