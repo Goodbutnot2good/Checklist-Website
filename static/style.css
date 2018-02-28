@@ -16,8 +16,8 @@ body{
 
 h1{
     position: absolute;
-    top: 20%;
-    left: 35%;
+    top: 1%;
+    left: 20%;
     transform: translate(-50%, -50%);
     font-family: 'Monoton', cursive;
     font-size: 5vmax;
@@ -26,11 +26,11 @@ h1{
     user-select: none;
 }
 
-#tasks{
+#task{
     position: absolute;
-    top: 30%;
-    left:15%;
-    width: 40%;
+    top: 15%;
+    left:2%;
+    width: 45%;
     height: 40px;
     margin: auto;
     font-size: 20px;
@@ -40,24 +40,100 @@ h1{
     box-shadow: 4px 4px lightblue;
     transition: 0.5s;
 }
-#tasks:hover{
+#task:hover{
     box-shadow: 4px 4px lightblue;
 }
-#tasks:focus{
+#task:focus{
     outline-width: 0;
 }
 
-#tasks:valid{
+#task:valid{
     padding-left: 100px;
     font-family: 'Concert One', cursive;
     font-weight: lighter;
 }
-
-#push{
+#item{
     position: absolute;
-    right: 34%;
+    top: 22%;
+    left:25%;
+    width: 22%;
     height: 40px;
-    top: 30%;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+    border-width: 5px;
+    box-shadow: 4px 4px lightblue;
+    transition: 0.5s;
+}
+#item:hover{
+    box-shadow: 4px 4px lightblue;
+}
+#item:focus{
+    outline-width: 0;
+}
+
+#item:valid{
+    padding-left: 100px;
+    font-family: 'Concert One', cursive;
+    font-weight: lighter;
+}
+#index{
+    position: absolute;
+    top: 22%;
+    left:2%;
+    width: 22%;
+    height: 40px;
+    margin: auto;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+    border-width: 5px;
+    box-shadow: 4px 4px lightblue;
+    transition: 0.5s;
+}
+#index:hover{
+    box-shadow: 4px 4px lightblue;
+}
+#index:focus{
+    outline-width: 0;
+}
+
+#index:valid{
+    padding-left: 100px;
+    font-family: 'Concert One', cursive;
+    font-weight: lighter;
+}
+#updateBtn{
+    position: absolute;
+    left: 48%;
+    height: 40px;
+    top: 22%;
+    width: 10%;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Monoton', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+    background: #b3f0ff;
+    box-shadow: 3px 2px lightblue;
+    transition: 0.5s;
+    user-select: none;
+}
+#updateBtn:hover{
+    background: #00ccff;
+    box-shadow: 10px 10px lightblue;
+}
+
+#updateBtn:focus{
+    outline-width: 0;
+}
+
+#addBtn{
+    position: absolute;
+    left: 48%;
+    height: 40px;
+    top: 15%;
     width: 10%;
     border-radius: 10px;
     border: none;
@@ -70,12 +146,12 @@ h1{
     user-select: none;
 }
 
-#push:hover{
+#addBtn:hover{
     background: #00ccff;
-    box-shadow: 10px 10px lightblue;
+    box-shadow: 10px 10px rgb(139, 208, 231);
 }
 
-#push:focus{
+#addBtn:focus{
     outline-width: 0;
 }
 #unorderlist{
